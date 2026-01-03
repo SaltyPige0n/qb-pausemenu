@@ -3,8 +3,7 @@
 A simple pause menu. It was from my server but i have no means of opening one.
 ## Preview
 
-https://streamable.com/nuc1b2
-
+![Preview](https://i.ibb.co/wFpm6MW9/image.png)
 
 ## Features
 - Open map and settings
