@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QB Pause Menu</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app" class="app">
+    <div class="backdrop"></div>
+    <div class="panel">
+      <header class="top-row">
+        <div class="tile">
+          <svg class="tile-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="6" width="18" height="12" rx="2" />
+            <rect x="6" y="9" width="12" height="6" rx="1" />
+            <line x1="12" y1="9" x2="12" y2="15" />
+          </svg>
+          <span class="label">Cash</span>
+          <span class="value" id="cash">$0</span>
+        </div>
+        <div class="tile">
+          <svg class="tile-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <polygon points="12 4 3 8 21 8 12 4" />
+            <rect x="4" y="8" width="16" height="11" rx="1" />
+            <line x1="8" y1="10" x2="8" y2="18" />
+            <line x1="12" y1="10" x2="12" y2="18" />
+            <line x1="16" y1="10" x2="16" y2="18" />
+          </svg>
+          <span class="label">Bank</span>
+          <span class="value" id="bank">$0</span>
+        </div>
+        <div class="tile">
+          <svg class="tile-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="6" width="18" height="12" rx="2" />
+            <circle cx="9" cy="12" r="2" />
+            <line x1="13" y1="11" x2="18" y2="11" />
+            <line x1="13" y1="14" x2="18" y2="14" />
+          </svg>
+          <span class="label">Player ID</span>
+          <span class="value" id="player-id">0</span>
+        </div>
+        <div class="tile">
+          <svg class="tile-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 8v5l8 8 10-10-8-8H8z" />
+            <circle cx="8.5" cy="10.5" r="1.5" />
+          </svg>
+          <span class="label">CID</span>
+          <span class="value" id="cid">N/A</span>
+        </div>
+        <div class="tile">
+          <svg class="tile-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="7" width="18" height="12" rx="2" />
+            <path d="M9 7V5h6v2" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+          </svg>
+          <span class="label">Job</span>
+          <span class="value" id="job">Unemployed</span>
+        </div>
+      </header>
+
+      <section class="mid-row">
+        <div class="left-col">
+          <div class="action-row">
+            <button class="action-tile map" data-action="map" type="button">
+              <div>
+                <span class="action-title">Map</span>
+                <span class="action-sub">City overview</span>
+              </div>
+              <span class="action-tag">GPS</span>
+            </button>
+            <button class="action-tile settings" data-action="settings" type="button">
+              <div>
+                <span class="action-title">Settings</span>
+                <span class="action-sub">Graphics and controls</span>
+              </div>
+              <span class="action-tag">Menu</span>
+            </button>
+          </div>
+
+          <button class="discord-banner" data-action="discord" data-url="https://discord.gg/yourserver" type="button">
+            <span class="discord-title" id="discord-title">Join Our Discord</span>
+            <span class="discord-sub" id="discord-sub">discord.gg/yourserver</span>
+          </button>
+        </div>
+
+        <aside class="rules">
+          <h2 id="rules-title">RP Rules</h2>
+          <ol id="rules-list">
+          </ol>
+        </aside>
+      </section>
+
+      <footer class="footer">
+        <div class="status-box">
+          <div class="status-item">
+            <span class="status-label">Players</span>
+            <span class="status-value" id="players-online">0/0</span>
+          </div>
+        </div>
+        <div class="footer-actions">
+          <button class="resume" data-action="close" type="button">Resume</button>
+          <button class="leave" data-action="leave" type="button">Leave server</button>
+        </div>
+      </footer>
+    </div>
+
+    <div class="modal" id="leave-modal" aria-hidden="true">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="leave-title">
+        <h3 id="leave-title">Disconnect?</h3>
+        <p>Are you sure you would like to disconnect?</p>
+        <div class="modal-actions">
+          <button class="modal-cancel" data-action="cancel-leave" type="button">Cancel</button>
+          <button class="modal-confirm" data-action="confirm-leave" type="button">Yes, leave</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
